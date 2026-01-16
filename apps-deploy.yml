@@ -6,6 +6,7 @@ parameters:
     type: string
     values:
       - tools
+      - dev
 
 name: "Deploy to ${{ parameters.environment }}"
 
