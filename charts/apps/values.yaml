@@ -8,4 +8,4 @@ config:
 
 applications:
   - name: guestbook-azdo
-  - name: guestbrook-azdo
+#  - name: guestbrook-azdo
