@@ -1,0 +1,10 @@
+config:
+  spec:
+    destination:
+      server: https://kubernetes.default.svc
+    source:
+      repoURL: https://github.com/fundarealestate/argocd-example-azdo
+      targetRevision: master
+
+applications:
+  - name: guestbook-azdo

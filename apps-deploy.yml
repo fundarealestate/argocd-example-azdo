@@ -1,0 +1,26 @@
+trigger: none
+pr: none
+
+parameters:
+  - name: environment
+    type: string
+    values:
+      - tools
+
+name: "Deploy to ${{ parameters.environment }}"
+
+resources:
+  repositories:
+    - repository: templates
+      type: github
+      ref: refs/tags/7.x.x
+      name: fundarealestate/service-pipeline-templates
+      endpoint: fundarealestate
+
+stages:
+  - template: service/deploy/deploy-helm.yml@templates
+    parameters:
+      name: DeployHelm
+      releaseName: apps
+      environment: ${{ parameters.environment }}
+      imageTag: v3
